@@ -23,9 +23,9 @@ app.listen(port, () => {
 
 const cko = new Checkout(`${process.env.CKO_SECRET_KEY}`);
 
-// app.get("/", (req, res) => {
-//   res.sendFile(__dirname + "/index.html");
-// });
+app.get("/", (req, res) => {
+  res.send("Server is runing ...");
+});
 
 // ## POST to proccess the payment with 3Ds
 app.post("/request_payment", async (req, res, next) => {
