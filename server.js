@@ -11,11 +11,11 @@ import { Checkout } from "checkout-sdk-node";
 // const __dirname = dirname(__filename);
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 8080;
 
-app.use(cors());
 app.use(express.static("./"));
 app.use(bodyParser.json());
+app.use(cors());
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
